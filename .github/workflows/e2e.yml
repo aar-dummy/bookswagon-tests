@@ -1,4 +1,4 @@
- name: Bookswagon E2E Tests
+  name: Bookswagon E2E Tests
 
   on:
     push:
