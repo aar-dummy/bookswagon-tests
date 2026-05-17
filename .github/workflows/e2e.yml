@@ -1,37 +1,37 @@
-  name: Bookswagon E2E Tests
+name: Bookswagon E2E Tests
 
-  on:
-    push:
-      branches: [main]
-    workflow_dispatch:
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
 
-  jobs:
-    test:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v4
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
 
-        - name: Set up Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: "3.11"
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
 
-        - name: Install dependencies
-          run: pip install selenium pytest pytest-html webdriver-manager
+      - name: Install dependencies
+        run: pip install selenium pytest pytest-html webdriver-manager
 
-        - name: Run tests
-          env:
-            TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
-            TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
-            HEADLESS: "true"
-          run: python -m pytest
+      - name: Run tests
+        env:
+          TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
+          TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+          HEADLESS: "true"
+        run: python -m pytest
 
-        - name: Upload report
-          if: always()
-          uses: actions/upload-artifact@v4
-          with:
-            name: test-report-${{ github.run_number }}
-            path: |
-              report.html
-              report.xml
-            retention-days: 30
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report-${{ github.run_number }}
+          path: |
+            report.html
+            report.xml
+          retention-days: 30
