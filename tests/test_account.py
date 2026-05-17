@@ -1,7 +1,7 @@
 import pytest
-from bookswagon_tests.pages.account_page import AccountPage
-from bookswagon_tests.pages.login_page import LoginPage
-from bookswagon_tests.config import BASE_URL
+from pages.account_page import AccountPage
+from pages.login_page import LoginPage
+from config import BASE_URL
 
 
 class TestAccount:

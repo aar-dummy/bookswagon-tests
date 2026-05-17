@@ -1,7 +1,7 @@
 import pytest
-from bookswagon_tests.pages.login_page import LoginPage
-from bookswagon_tests.pages.signup_page import SignupPage
-from bookswagon_tests.config import TEST_EMAIL, TEST_PASSWORD, BASE_URL
+from pages.login_page import LoginPage
+from pages.signup_page import SignupPage
+from config import TEST_EMAIL, TEST_PASSWORD, BASE_URL
 import time
 
 

@@ -6,7 +6,7 @@ from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
-from bookswagon_tests.config import BROWSER, HEADLESS, IMPLICIT_WAIT, PAGE_LOAD_TIMEOUT, BASE_URL
+from config import BROWSER, HEADLESS, IMPLICIT_WAIT, PAGE_LOAD_TIMEOUT, BASE_URL
 
 
 def get_driver():
@@ -39,8 +39,8 @@ def driver():
 
 @pytest.fixture(scope="function")
 def logged_in_driver(driver):
-    from bookswagon_tests.pages.login_page import LoginPage
-    from bookswagon_tests.config import TEST_EMAIL, TEST_PASSWORD
+    from pages.login_page import LoginPage
+    from config import TEST_EMAIL, TEST_PASSWORD
     login = LoginPage(driver)
     login.open()
     login.login(TEST_EMAIL, TEST_PASSWORD)

@@ -3,11 +3,14 @@ name: Bookswagon E2E Tests
 on:
   push:
     branches: [main]
-  workflow_dispatch:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:  # allows manual trigger from GitHub UI
 
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -26,7 +29,7 @@ jobs:
           HEADLESS: "true"
         run: python -m pytest
 
-      - name: Upload report
+      - name: Upload HTML report
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -35,3 +38,9 @@ jobs:
             report.html
             report.xml
           retention-days: 30
+
+      - name: Publish JUnit results
+        if: always()
+        uses: mikepenz/action-junit-report@v4
+        with:
+          report_paths: report.xml

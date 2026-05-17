@@ -1,7 +1,7 @@
 import pytest
-from bookswagon_tests.pages.search_results_page import SearchResultsPage
-from bookswagon_tests.pages.home_page import HomePage
-from bookswagon_tests.config import SEARCH_QUERY, SEARCH_QUERY_NO_RESULTS
+from pages.search_results_page import SearchResultsPage
+from pages.home_page import HomePage
+from config import SEARCH_QUERY, SEARCH_QUERY_NO_RESULTS
 
 
 class TestSearch:

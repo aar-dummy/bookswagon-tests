@@ -17,7 +17,10 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install selenium pytest pytest-html webdriver-manager
+        run: pip install selenium pytest pytest-html webdriver-manager setuptools
+
+      - name: Install package
+        run: pip install -e .
 
       - name: Run tests
         env:

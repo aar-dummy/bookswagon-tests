@@ -1,7 +1,7 @@
 import pytest
-from bookswagon_tests.pages.category_page import CategoryPage
-from bookswagon_tests.pages.home_page import HomePage
-from bookswagon_tests.config import BASE_URL
+from pages.category_page import CategoryPage
+from pages.home_page import HomePage
+from config import BASE_URL
 
 
 CATEGORY_URLS = [

@@ -1,9 +1,9 @@
 import pytest
-from bookswagon_tests.pages.checkout_page import CheckoutPage
-from bookswagon_tests.pages.cart_page import CartPage
-from bookswagon_tests.pages.search_results_page import SearchResultsPage
-from bookswagon_tests.pages.product_detail_page import ProductDetailPage
-from bookswagon_tests.config import SEARCH_QUERY
+from pages.checkout_page import CheckoutPage
+from pages.cart_page import CartPage
+from pages.search_results_page import SearchResultsPage
+from pages.product_detail_page import ProductDetailPage
+from config import SEARCH_QUERY
 
 
 def add_item_to_cart(driver):

@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
-from bookswagon_tests.pages.base_page import BasePage
-from bookswagon_tests.config import BASE_URL
+from pages.base_page import BasePage
+from config import BASE_URL
 
 
 class SignupPage(BasePage):

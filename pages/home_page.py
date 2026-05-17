@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from bookswagon_tests.pages.base_page import BasePage
-from bookswagon_tests.config import BASE_URL
+from pages.base_page import BasePage
+from config import BASE_URL
 
 
 class HomePage(BasePage):

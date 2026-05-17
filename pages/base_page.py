@@ -1,6 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from bookswagon_tests.config import EXPLICIT_WAIT
+from config import EXPLICIT_WAIT
 
 
 class BasePage:

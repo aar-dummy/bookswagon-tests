@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from bookswagon_tests.pages.base_page import BasePage
+from pages.base_page import BasePage
 
 
 class CategoryPage(BasePage):

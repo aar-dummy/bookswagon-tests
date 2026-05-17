@@ -1,7 +1,7 @@
 import pytest
-from bookswagon_tests.pages.search_results_page import SearchResultsPage
-from bookswagon_tests.pages.product_detail_page import ProductDetailPage
-from bookswagon_tests.config import SEARCH_QUERY
+from pages.search_results_page import SearchResultsPage
+from pages.product_detail_page import ProductDetailPage
+from config import SEARCH_QUERY
 
 
 def navigate_to_product(driver):

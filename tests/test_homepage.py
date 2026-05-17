@@ -1,6 +1,6 @@
 import pytest
-from bookswagon_tests.pages.home_page import HomePage
-from bookswagon_tests.config import BASE_URL
+from pages.home_page import HomePage
+from config import BASE_URL
 
 
 class TestHomePage:
@@ -41,7 +41,7 @@ class TestHomePage:
         assert page.is_visible(page.LOGIN_LINK)
 
     def test_search_redirects(self, driver):
-        from bookswagon_tests.config import SEARCH_QUERY
+        from config import SEARCH_QUERY
         page = HomePage(driver)
         page.open()
         page.search(SEARCH_QUERY)

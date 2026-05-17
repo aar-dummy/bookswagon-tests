@@ -1,8 +1,8 @@
 import pytest
-from bookswagon_tests.pages.wishlist_page import WishlistPage
-from bookswagon_tests.pages.search_results_page import SearchResultsPage
-from bookswagon_tests.pages.product_detail_page import ProductDetailPage
-from bookswagon_tests.config import SEARCH_QUERY
+from pages.wishlist_page import WishlistPage
+from pages.search_results_page import SearchResultsPage
+from pages.product_detail_page import ProductDetailPage
+from config import SEARCH_QUERY
 
 
 class TestWishlist:

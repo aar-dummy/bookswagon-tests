@@ -1,8 +1,10 @@
+import os
+
 BASE_URL = "https://www.bookswagon.com"
 
-# Test credentials - replace with real values or use env vars
-TEST_EMAIL = "aarconn23@gmail.com"
-TEST_PASSWORD = "Password@12"
+# Reads from environment variables (set in GitHub Secrets); falls back to local values
+TEST_EMAIL = os.getenv("TEST_EMAIL", "aarconn23@gmail.com")
+TEST_PASSWORD = os.getenv("TEST_PASSWORD", "Password@12")
 TEST_FIRST_NAME = "Aar"
 TEST_LAST_NAME = "R"
 
@@ -13,7 +15,7 @@ PAGE_LOAD_TIMEOUT = 30
 
 # Browser: "chrome" or "firefox"
 BROWSER = "chrome"
-HEADLESS = False
+HEADLESS = os.getenv("HEADLESS", "false").lower() == "true"
 
 # Test data
 SEARCH_QUERY = "harry potter"

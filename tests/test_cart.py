@@ -1,8 +1,8 @@
 import pytest
-from bookswagon_tests.pages.cart_page import CartPage
-from bookswagon_tests.pages.search_results_page import SearchResultsPage
-from bookswagon_tests.pages.product_detail_page import ProductDetailPage
-from bookswagon_tests.config import SEARCH_QUERY, BASE_URL
+from pages.cart_page import CartPage
+from pages.search_results_page import SearchResultsPage
+from pages.product_detail_page import ProductDetailPage
+from config import SEARCH_QUERY, BASE_URL
 
 
 def add_product_to_cart(driver):
