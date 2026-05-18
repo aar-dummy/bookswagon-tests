@@ -24,10 +24,10 @@ jobs:
 
       - name: Run tests
         env:
-          TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
-          TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+          TEST_EMAIL: ${{ aarconn23@gmail.com }}
+          TEST_PASSWORD: ${{ Password@12 }}
           HEADLESS: "true"
-        run: python -m pytest
+        run: python -m pytest tests/ --html=report.html --junitxml=report.xml -v
 
       - name: Upload report
         if: always()
