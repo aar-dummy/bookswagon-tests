@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        TEST_EMAIL    = credentials('aarconn23@gmail.com')
-        TEST_PASSWORD = credentials('Password@12')
+        TEST_EMAIL    = credentials('TEST_EMAIL')
+        TEST_PASSWORD = credentials('TEST_PASSWORD')
         HEADLESS      = 'true'
     }
 
@@ -31,12 +31,7 @@ pipeline {
 
     post {
         always {
-            publishHTML(target: [
-                reportName : 'E2E Test Report',
-                reportDir  : '.',
-                reportFiles: 'report.html',
-                keepAll    : true
-            ])
+            archiveArtifacts artifacts: 'report.html, report.xml', allowEmptyArchive: true
         }
     }
 }
