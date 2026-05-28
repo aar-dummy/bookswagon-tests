@@ -26,12 +26,11 @@ pipeline {
             steps {
                 bat 'venv\\Scripts\\python -m pytest --html=report.html --self-contained-html'
             }
-        }
-    }
-
-    post {
-        always {
-            archiveArtifacts artifacts: 'report.html, report.xml', allowEmptyArchive: true
+            post {
+                always {
+                    archiveArtifacts artifacts: 'report.html, report.xml', allowEmptyArchive: true
+                }
+            }
         }
     }
 }
