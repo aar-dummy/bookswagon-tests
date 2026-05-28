@@ -1,12 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        TEST_EMAIL    = credentials('TEST_EMAIL')
-        TEST_PASSWORD = credentials('TEST_PASSWORD')
-        HEADLESS      = 'true'
-    }
-
     stages {
         stage('Checkout') {
             steps {
@@ -24,7 +18,12 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat 'venv\\Scripts\\python -m pytest --html=report.html --self-contained-html'
+                withCredentials([
+                    string(credentialsId: 'TEST_EMAIL', variable: 'TEST_EMAIL'),
+                    string(credentialsId: 'TEST_PASSWORD', variable: 'TEST_PASSWORD')
+                ]) {
+                    bat 'venv\\Scripts\\python -m pytest --html=report.html --self-contained-html'
+                }
             }
             post {
                 always {
