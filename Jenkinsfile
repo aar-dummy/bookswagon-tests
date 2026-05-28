@@ -19,8 +19,8 @@ pipeline {
         stage('Run Tests') {
             steps {
                 withCredentials([
-                    string(credentialsId: 'TEST_EMAIL', variable: 'TEST_EMAIL'),
-                    string(credentialsId: 'TEST_PASSWORD', variable: 'TEST_PASSWORD')
+                    string(credentialsId: 'BOOKSWAGON_EMAIL', variable: 'TEST_EMAIL'),
+                    string(credentialsId: 'BOOKSWAGON_PASSWORD', variable: 'TEST_PASSWORD')
                 ]) {
                     bat 'venv\\Scripts\\python -m pytest --html=report.html --self-contained-html'
                 }
