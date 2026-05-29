@@ -22,7 +22,7 @@ pipeline {
                     string(credentialsId: 'BOOKSWAGON_EMAIL', variable: 'TEST_EMAIL'),
                     string(credentialsId: 'BOOKSWAGON_PASSWORD', variable: 'TEST_PASSWORD')
                 ]) {
-                    bat 'venv\\Scripts\\python -m pytest --html=report.html --self-contained-html'
+                    bat 'venv\\Scripts\\python -m pytest tests/test_homepage.py::TestHomePage::test_homepage_loads -v --html=report.html --self-contained-html'
                 }
             }
             post {
